@@ -10,7 +10,6 @@ def add_song(song_id):
 
     print("Record added successfully.")
 
-#TODO(Kenji Enishi Campos): create a function that updates a song in the playlist
 def update_playlist():
     song_id = int(input("Enter the song ID to update: "))
     song_to_update = None
@@ -45,27 +44,22 @@ def update_playlist():
     else:
         print("Song ID not found.")
 
-#TODO(Jedi Duncan Gonot): create a function that displays all songs in the playlist
+def display_playlist():
+    if not playlist:
+        print("There are no songs in the Playlist.")
+        return
+    
+    print("\nCurrent Playlist:")
+    print("=" * 50)
+    for song in playlist:
+        print(f"Song ID      : {song['song_id']}")
+        print(f"Song Name    : {song['song_name']}")
+        print(f"Artist Name  : {song['artist_name']}")
+        print(f"Song Genre   : {song['song_genre']}")
+        print(f"Release Year : {song['release_year']}")
+        print("-" * 50)
 #TODO(Paul Benidict Reduta): create a function that searches for a specific son
 #TODO(Dion Manicio): create a function that deletes a song in the playlist
-
-#temporary playlist
-playlist = [
-    {
-        "song_id": 1,
-        "song_name": "Marilag",
-        "song_artist": "Dionela",
-        "song_genre": "R&B/SOUL",
-        "release_year": 2024
-    },
-    {
-        "song_id": 2,
-        "song_name": "Plastic Love",
-        "song_artist": "Mariya Takeuchi",
-        "song_genre": "CITY POP",
-        "release_year": 1968
-    }
-]
 
 playlist = []
 song_id_counter = 0
