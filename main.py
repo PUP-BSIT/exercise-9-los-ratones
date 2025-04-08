@@ -1,4 +1,15 @@
-#TODO(JohnPaul Rodriguez): create a function that adds songs to the playlist
+def add_song(song_id):
+    new_song = {}
+    
+    new_song['song_id'] = song_id
+    new_song['song_name'] = input("Enter Song Name: ").title()
+    new_song['artist_name'] = input("Enter Artist Name: ").title()
+    new_song['song_genre'] = input("Enter Song Genre: ").upper()
+    new_song['release_year'] = int(input("Enter Release Year: "))
+    playlist.append(new_song)
+
+    print("Record added successfully.")
+
 #TODO(Kenji Enishi Campos): create a function that updates a song in the playlist
 def update_playlist():
     song_id = int(input("Enter the song ID to update: "))
@@ -56,6 +67,9 @@ playlist = [
     }
 ]
 
+playlist = []
+song_id_counter = 0
+
 while True:
     print(
         "\n===========================\n" 
@@ -74,7 +88,10 @@ while True:
 
     match user_choice:
         case 1:
-            pass
+            print(" ")
+            song_id += 1
+            add_song(song_id)
+            input("Press any key to continue...")
         case 2:
             print(" ")
             update_playlist()
