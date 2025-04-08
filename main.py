@@ -58,7 +58,27 @@ def display_playlist():
         print(f"Song Genre   : {song['song_genre']}")
         print(f"Release Year : {song['release_year']}")
         print("-" * 50)
-#TODO(Paul Benidict Reduta): create a function that searches for a specific son
+
+def search_song():
+    if not playlist:
+        print("The are no songs in the Playlist.")
+        return
+    
+    song_name = input("Please Enter the Song Name: ").title()
+
+    print("=" * 50)
+    for song in playlist:
+        if song["song_name"] == song_name:
+            print(f"Song ID      : {song['song_id']}")
+            print(f"Song Name    : {song['song_name']}")
+            print(f"Artist Name  : {song['artist_name']}")
+            print(f"Song Genre   : {song['song_genre']}")
+            print(f"Release Year : {song['release_year']}")
+            print("-" * 50)
+            return
+        
+    print(f"There is no song named '{song_name}' found..")
+
 #TODO(Dion Manicio): create a function that deletes a song in the playlist
 
 playlist = []
@@ -83,17 +103,21 @@ while True:
     match user_choice:
         case 1:
             print(" ")
-            song_id += 1
-            add_song(song_id)
+            song_id_counter += 1
+            add_song(song_id_counter)
             input("Press any key to continue...")
         case 2:
             print(" ")
             update_playlist()
             input("Press any key to continue...")
         case 3:
-            pass
+            print(" ")
+            display_playlist()
+            input("Press any key to continue...")
         case 4:
-            pass
+            print(" ")
+            search_song()
+            input("Press any key to continue...")
         case 5:
             pass
         case 6:
