@@ -79,7 +79,16 @@ def search_song():
         
     print(f"There is no song named '{song_name}' found..")
 
-#TODO(Dion Manicio): create a function that deletes a song in the playlist
+def delete_song():
+    song_id = int(input("Enter the Song ID to delete: "))
+
+    for record in playlist:
+        if record['song_id'] == song_id:
+            playlist.remove(record)
+            print("Record deleted successfully.")
+            return
+        
+    print("Record not found.")
 
 playlist = []
 song_id_counter = 0
@@ -119,7 +128,9 @@ while True:
             search_song()
             input("Press any key to continue...")
         case 5:
-            pass
+            print(" ")
+            delete_song()
+            input("Press any key to continue...")
         case 6:
             break
         case _:
