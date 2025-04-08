@@ -23,6 +23,19 @@ playlist = [
 ]
 
 while True:
+    print(
+        "\n===========================\n" 
+        + "Welcome To LR Music Station\n" 
+        + "===========================\n" 
+        + "1. Add a Song\n" 
+        + "2. Update a Song\n" 
+        + "3. Display All Songs\n" 
+        + "4. Search a Song\n" 
+        + "5. Delete a Song\n" 
+        + "6. Exit\n"
+        + "==========================="
+        )
+    
     user_choice = int(input("Please Enter your Choice: "))
 
     match user_choice:
